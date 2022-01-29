@@ -8,6 +8,7 @@ import org.testng.annotations.Test;
 public class USPS_Ship_A_Label_POM extends Reusable_Annotations {
 
     @Test
+    //Test Git
     public void USPS_Verify_Tabs_Then_Ship_A_Label(){
 
         //Navigate to USPS
