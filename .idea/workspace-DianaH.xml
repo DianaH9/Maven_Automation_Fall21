@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="3e4ffbe4-50ba-4ba0-a341-2624e968b741" name="Changes" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="GitSEFilterConfiguration">
+    <file-type-list>
+      <filtered-out-file-type name="LOCAL_BRANCH" />
+      <filtered-out-file-type name="REMOTE_BRANCH" />
+      <filtered-out-file-type name="TAG" />
+      <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
+    </file-type-list>
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="useMavenConfig" value="true" />
+      </MavenGeneralSettings>
+    </option>
+  </component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="CurrentFile" />
+  </component>
+  <component name="ProjectId" id="21zHKzRudgKSKo742Oz6gbf8UMr" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/resources" />
+    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.proportion" value="0.0" />
+    <property name="project.structure.side.proportion" value="0.0" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\missd\OneDrive\Desktop\Maven_Automation2021\src\main\resources" />
+    </key>
+  </component>
+  <component name="RunManager" selected="TestNG.GoogleSearch_DataDriven">
+    <configuration name="Day10_OptionalActionItem" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="Maven_Automation2021" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="Day10_010922.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="Day10_010922" />
+      <option name="MAIN_CLASS_NAME" value="Day10_010922.Day10_OptionalActionItem" />
+      <option name="TEST_OBJECT" value="CLASS" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Day10_OptionalActionItem.macPurchase" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="Maven_Automation2021" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="Day10_010922.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="Day10_010922" />
+      <option name="MAIN_CLASS_NAME" value="Day10_010922.Day10_OptionalActionItem" />
+      <option name="METHOD_NAME" value="macPurchase" />
+      <option name="TEST_OBJECT" value="METHOD" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Day10_OptionalActionItem.windowsHpPurchase" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="Maven_Automation2021" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="Day10_010922.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="Day10_010922" />
+      <option name="MAIN_CLASS_NAME" value="Day10_010922.Day10_OptionalActionItem" />
+      <option name="METHOD_NAME" value="windowsHpPurchase" />
+      <option name="TEST_OBJECT" value="METHOD" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="GoogleSearch_DataDriven" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="Maven_Automation2021" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="Day11_011522.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="Day11_011522" />
+      <option name="MAIN_CLASS_NAME" value="Day11_011522.GoogleSearch_DataDriven" />
+      <option name="TEST_OBJECT" value="CLASS" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="GoogleSearch_DataDriven.GoogleSearchDataDriven" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="Maven_Automation2021" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="Day11_011522.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="Day11_011522" />
+      <option name="MAIN_CLASS_NAME" value="Day11_011522.GoogleSearch_DataDriven" />
+      <option name="METHOD_NAME" value="GoogleSearchDataDriven" />
+      <option name="TEST_OBJECT" value="METHOD" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="TestNG.GoogleSearch_DataDriven" />
+        <item itemvalue="TestNG.GoogleSearch_DataDriven.GoogleSearchDataDriven" />
+        <item itemvalue="TestNG.Day10_OptionalActionItem.macPurchase" />
+        <item itemvalue="TestNG.Day10_OptionalActionItem.windowsHpPurchase" />
+        <item itemvalue="TestNG.Day10_OptionalActionItem" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="3e4ffbe4-50ba-4ba0-a341-2624e968b741" name="Changes" comment="" />
+      <created>1638936937463</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1638936937463</updated>
+    </task>
+    <servers />
+  </component>
+</project>
