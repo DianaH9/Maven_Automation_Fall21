@@ -1,14 +1,8 @@
 package Day12_011622;
 
-import Day9_010822.Reusable_Actions;
 import Reusable_Library.Reusable_Actions_Loggers;
 import Reusable_Library.Reusable_Annotations;
-import com.relevantcodes.extentreports.ExtentReports;
-import com.relevantcodes.extentreports.ExtentTest;
 import com.relevantcodes.extentreports.LogStatus;
-import org.openqa.selenium.WebDriver;
-import org.testng.annotations.AfterSuite;
-import org.testng.annotations.BeforeSuite;
 import org.testng.annotations.Test;
 
 public class ExtentReport_USPS_Example extends Reusable_Annotations {

@@ -40,11 +40,11 @@ public class Reusable_Actions_Loggers {
         //Declare local explicit wait
         WebDriverWait wait = new WebDriverWait(driver,15);
         System.out.println("Hovering on element " + elementName);
-        logger.log(LogStatus.INFO,"Hovering on element " + elementName);
         try {
             Actions actions = new Actions(driver);
             WebElement element = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(xpath)));
             actions.moveToElement(element).perform();
+            logger.log(LogStatus.PASS,"Hovering on element " + elementName);
         } catch (Exception e) {
             System.out.println("Unable to hover on " + elementName + " Error:" + e);
             logger.log(LogStatus.FAIL,"Unable to hover on " + elementName + " Error:" + e);
@@ -72,9 +72,9 @@ public class Reusable_Actions_Loggers {
         //Declare Local Explicit wait
         WebDriverWait wait = new WebDriverWait(driver, 15);
         System.out.println("Clicking on Element " + elementName);
-        logger.log(LogStatus.INFO,"Clicking on Element " + elementName);
         try {
             wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(xpath))).click();
+            logger.log(LogStatus.PASS,"Clicking on Element " + elementName);
         } catch (Exception e) {
             System.out.println("Unable to click on " + elementName + "Error:" + e);
             logger.log(LogStatus.FAIL,"Unable to click on " + elementName + " Error:" + e);
@@ -87,9 +87,9 @@ public class Reusable_Actions_Loggers {
         //Declare Local Explicit wait
         WebDriverWait wait = new WebDriverWait(driver, 15);
         System.out.println("Submitting on Element " + elementName);
-        logger.log(LogStatus.INFO,"Submitting on Element " + elementName);
         try {
             wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(xpath))).submit();
+            logger.log(LogStatus.PASS,"Submitting on Element " + elementName);
         } catch (Exception e) {
             System.out.println("Unable to submit on " + elementName + "Error:" + e);
             logger.log(LogStatus.FAIL,"Unable to submit on " + elementName + " Error:" + e);
@@ -102,13 +102,13 @@ public class Reusable_Actions_Loggers {
         //Declare local explicit wait
         WebDriverWait wait = new WebDriverWait(driver,15);
         System.out.println("Typing on element " + elementName);
-        logger.log(LogStatus.INFO,"Typing on element " + elementName);
         try {
             WebElement element = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(xpath)));
             //Clear First
             element.clear();
             //Enter User Data
             element.sendKeys(userData);
+            logger.log(LogStatus.PASS,"Typing on element " + elementName);
         } catch (Exception e) {
             System.out.println("Unable to type on " + elementName + "Error: " + e);
             logger.log(LogStatus.FAIL,"Unable to type on " + elementName + " Error:" + e);
@@ -132,11 +132,11 @@ public class Reusable_Actions_Loggers {
         //Declare a global variable to capture the text, so I can return it
         String result = null;
         //Null or "  "
-        logger.log(LogStatus.INFO,"Capturing text on element " + elementName);
         try {
             WebElement element = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(xpath)));
             //Capture Text
             result = element.getText();
+            logger.log(LogStatus.PASS,"Capturing text on element " + elementName);
         } catch (Exception e) {
             System.out.println("Unable to capture text on " + elementName + "Error: " + e);
             logger.log(LogStatus.FAIL,"Unable to capture text on " + elementName + "Error: " + e);
@@ -149,11 +149,11 @@ public class Reusable_Actions_Loggers {
     public static void dropDownSelect(WebDriver driver,String locator,String userSelect, ExtentTest logger, String elementName){
         WebDriverWait wait = new WebDriverWait(driver, 15);
         System.out.println("Selecting " + userSelect + " from drop down " + elementName);
-        logger.log(LogStatus.INFO,"Selecting " + userSelect + " from drop down " + elementName);
         try{
             WebElement element = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(locator)));
             Select select = new Select(element);
             select.selectByVisibleText(userSelect);
+            logger.log(LogStatus.PASS,"Selecting " + userSelect + " from drop down " + elementName);
         } catch (Exception e) {
             System.out.println("Unable to select value from drop down - " + elementName + " - " + e);
             logger.log(LogStatus.FAIL,"Unable to select value from drop down - " + elementName + " - " + e);
@@ -165,15 +165,34 @@ public class Reusable_Actions_Loggers {
     public static void clickByIndex(WebDriver driver,String locator, int indexNum, ExtentTest logger, String elementName){
         WebDriverWait wait = new WebDriverWait(driver, 15);
         System.out.println("Clicking on element " + elementName);
-        logger.log(LogStatus.INFO,"Clicking on element " + elementName);
         try{
             wait.until(ExpectedConditions.visibilityOfAllElementsLocatedBy(By.xpath(locator))).get(indexNum).click();
+            logger.log(LogStatus.PASS,"Clicking on element " + elementName);
         } catch (Exception e) {
             System.out.println("Unable to Click on element " + elementName + " --" + e);
             logger.log(LogStatus.FAIL,"Unable to Click by Index on " + elementName + "Error:" + e);
             getScreenShot(driver,elementName,logger);
         }//End of Click Element by Index Number Exception
     }//End of Click on Element by Index Number Method
+
+    //Creating a Boolean to Verify Status of Element
+    public static void verifyStatusOfElement(WebDriver driver, String xpath, Boolean expectedStatus, ExtentTest logger, String elementName){
+        WebDriverWait wait = new WebDriverWait(driver,10);
+        System.out.println("Verifying on element " + elementName);
+        try{
+            Boolean actualStatus = wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//input[@type='checkbox']"))).isSelected();
+            if(expectedStatus == actualStatus){
+                logger.log(LogStatus.PASS,"Element is selected as expected");
+            } else {
+                logger.log(LogStatus.FAIL,"Element is not selected");
+            }//End of Boolean Loop
+        } catch (Exception e) {
+            System.out.println("Unable to Verify Status of Element " + elementName + "Error: " + e);
+            logger.log(LogStatus.FAIL,"Unable to Verify Status of Element " + elementName + "Error:" + e);
+            getScreenShot(driver,elementName,logger);
+        }//End of Boolean to Verify Status of Element Exception
+    }//End of Boolean to Verify Status of Element Method
+
 
     //Creating a Capture Screenshot Method when Logger Fails
     public static void getScreenShot(WebDriver driver,String imageName,ExtentTest logger) {

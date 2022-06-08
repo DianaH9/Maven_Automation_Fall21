@@ -41,11 +41,11 @@ public class Reusable_Actions_Loggers_POM {
         //Declare Local Explicit Wait
         WebDriverWait wait = new WebDriverWait(driver,15);
         System.out.println("Hovering on element " + elementName);
-        logger.log(LogStatus.INFO,"Hovering on element " + elementName);
         try {
             Actions actions = new Actions(driver);
-            WebElement element = wait.until(ExpectedConditions.visibilityOf((xpath)));
+            WebElement element = wait.until(ExpectedConditions.visibilityOf(xpath));
             actions.moveToElement(element).perform();
+            logger.log(LogStatus.PASS,"Hovering on element " + elementName);
         } catch (Exception e) {
             System.out.println("Unable to hover on " + elementName + " Error:" + e);
             logger.log(LogStatus.FAIL,"Unable to hover on " + elementName + " Error:" + e);
@@ -60,7 +60,7 @@ public class Reusable_Actions_Loggers_POM {
         System.out.println("Dismiss Popup " + elementName);
         logger.log(LogStatus.INFO,"Dismiss Popup " + elementName);
         try {
-            wait.until(ExpectedConditions.visibilityOf((xpath))).click();
+            wait.until(ExpectedConditions.visibilityOf(xpath)).click();
         } catch (Exception e) {
             System.out.println("Pop up didn't appear " + elementName + "Error:" + e);
             logger.log(LogStatus.PASS,"Pop Up didn't appear " + elementName + " Error:" + e);
@@ -75,21 +75,22 @@ public class Reusable_Actions_Loggers_POM {
         System.out.println("Dismiss Popup " + elementName);
         logger.log(LogStatus.INFO,"Dismiss Popup " + elementName);
         try {
-            wait.until(ExpectedConditions.visibilityOf((xpath))).click();
+            wait.until(ExpectedConditions.visibilityOf(xpath)).click();
         } catch (Exception e) {
             System.out.println("Pop up didn't appear " + elementName + " Error:" + e);
             logger.log(LogStatus.PASS,"Pop Up didn't appear " + elementName + " Error:" + e);
-        }//End of Click Exception
-    }//End of Click Method
+            getScreenShot(driver,elementName,logger);
+        }//End of Dismiss Popup Click Exception
+    }//End of Dismiss Popup Click Method
 
     //Creating Void Click Method for any Web Element
     public static void clickMethod(WebDriver driver, WebElement xpath, ExtentTest logger,String elementName){
         //Declare Local Explicit Wait
         WebDriverWait wait = new WebDriverWait(driver,15);
         System.out.println("Clicking on element " + elementName);
-        logger.log(LogStatus.INFO,"Clicking on element " + elementName);
         try {
-            wait.until(ExpectedConditions.visibilityOf((xpath))).click();
+            wait.until(ExpectedConditions.visibilityOf(xpath)).click();
+            logger.log(LogStatus.PASS,"Clicking on element " + elementName);
         } catch (Exception e) {
             System.out.println("Unable to click on " + elementName + " Error:" + e);
             logger.log(LogStatus.FAIL,"Unable to click on " + elementName + " Error:" + e);
@@ -102,9 +103,9 @@ public class Reusable_Actions_Loggers_POM {
         //Declare Local Explicit Wait
         WebDriverWait wait = new WebDriverWait(driver,15);
         System.out.println("Clicking on element " + elementName);
-        logger.log(LogStatus.INFO,"Clicking on element " + elementName);
         try {
-            wait.until(ExpectedConditions.visibilityOf((xpath))).click();
+            wait.until(ExpectedConditions.visibilityOf(xpath)).click();
+            logger.log(LogStatus.PASS,"Clicking on element " + elementName);
         } catch (Exception e) {
             System.out.println("Unable to click on " + elementName + " Error:" + e);
             logger.log(LogStatus.FAIL,"Unable to click on " + elementName + " Error:" + e);
@@ -117,9 +118,9 @@ public class Reusable_Actions_Loggers_POM {
         //Declare Local Explicit Wait
         WebDriverWait wait = new WebDriverWait(driver,15);
         System.out.println("Submitting on element " + elementName);
-        logger.log(LogStatus.INFO,"Submitting on element " + elementName);
         try {
-            wait.until(ExpectedConditions.visibilityOf((xpath))).submit();
+            wait.until(ExpectedConditions.visibilityOf(xpath)).submit();
+            logger.log(LogStatus.PASS,"Submitting on element " + elementName);
         } catch (Exception e) {
             System.out.println("Unable to submit on " + elementName + " Error:" + e);
             logger.log(LogStatus.FAIL,"Unable to submit on " + elementName + " Error:" + e);
@@ -132,13 +133,13 @@ public class Reusable_Actions_Loggers_POM {
         //Declare Local Explicit Wait
         WebDriverWait wait = new WebDriverWait(driver,15);
         System.out.println("Typing on element " + elementName);
-        logger.log(LogStatus.INFO,"Typing on element " + elementName);
         try {
-            WebElement element = wait.until(ExpectedConditions.visibilityOf((xpath)));
+            WebElement element = wait.until(ExpectedConditions.visibilityOf(xpath));
             //Clear First
             element.clear();
             //Enter User Data
             element.sendKeys(userData);
+            logger.log(LogStatus.PASS,"Typing on element " + elementName);
         } catch (Exception e) {
             System.out.println("Unable to type on " + elementName + " Error:" + e);
             logger.log(LogStatus.FAIL,"Unable to type on " + elementName + " Error:" + e);
@@ -150,11 +151,11 @@ public class Reusable_Actions_Loggers_POM {
     public static void dropDownSelect(WebDriver driver,WebElement xpath,String userSelect, ExtentTest logger, String elementName){
         WebDriverWait wait = new WebDriverWait(driver, 15);
         System.out.println("Selecting " + userSelect + " from drop down " + elementName);
-        logger.log(LogStatus.INFO,"Selecting " + userSelect + " from drop down " + elementName);
         try{
-            WebElement element = wait.until(ExpectedConditions.visibilityOf((xpath)));
+            WebElement element = wait.until(ExpectedConditions.visibilityOf(xpath));
             Select select = new Select(element);
             select.selectByVisibleText(userSelect);
+            logger.log(LogStatus.PASS,"Selecting " + userSelect + " from drop down " + elementName);
         } catch (Exception e) {
             System.out.println("Unable to select value from drop down - " + elementName + " - " + e);
             logger.log(LogStatus.FAIL,"Unable to select value from drop down - " + elementName + " - " + e);
@@ -177,11 +178,11 @@ public class Reusable_Actions_Loggers_POM {
         System.out.println("Capturing text on element " + elementName);
         //Declare a Global Variable to Capture the Text, so I can return it
         String result = null;
-        logger.log(LogStatus.INFO,"Capturing text on element " + elementName);
         try {
-            WebElement element = wait.until(ExpectedConditions.visibilityOf((xpath)));
+            WebElement element = wait.until(ExpectedConditions.visibilityOf(xpath));
             //Capture Text
             result = element.getText();
+            logger.log(LogStatus.PASS,"Capturing text on element " + elementName);
         } catch (Exception e) {
             System.out.println("Unable to capture text on " + elementName + " Error:" + e);
             logger.log(LogStatus.FAIL,"Unable to capture text on " + elementName + " Error:" + e);
@@ -204,7 +205,7 @@ public class Reusable_Actions_Loggers_POM {
             String image = logger.addScreenCapture(snPath + fileName);
             logger.log(LogStatus.FAIL, "", image);
         } catch (Exception e) {
-            logger.log(LogStatus.FAIL, "Error Occured while taking SCREENSHOT!!!");
+            logger.log(LogStatus.FAIL, "Error Occurred while taking Screenshot");
             e.printStackTrace();
         }//End of get Screenshot Method Exception
     }//End of getScreenshot Method
